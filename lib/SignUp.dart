@@ -172,6 +172,7 @@ class _SignUpState extends State<SignUp> {
                       )
                     ],
                 ),
+                new Spacer(),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 60,

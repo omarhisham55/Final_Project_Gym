@@ -1,3 +1,6 @@
+import 'package:final_project_gym/Gym.dart';
+import 'package:final_project_gym/Home.dart';
+import 'package:final_project_gym/Navigation.dart';
 import 'package:final_project_gym/Login.dart';
 import 'package:final_project_gym/SignUp.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignUp(),
+      home: Navigation(),
     );
   }
 }
