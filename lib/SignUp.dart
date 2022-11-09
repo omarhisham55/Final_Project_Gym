@@ -1,3 +1,5 @@
+import 'package:final_project_gym/Login.dart';
+import 'package:final_project_gym/Navigation.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -8,22 +10,28 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  int _radioSelected = 1;
-  // String _radioVal;
+  var userController = TextEditingController();
+  var passController = TextEditingController();
+  var emailController = TextEditingController();
+  var conPassController = TextEditingController();
+  int groupRadio = 1;
+  var radioVal;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 102, 102, 102),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(50.0),
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 80),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
+      body: Padding(
+        padding: const EdgeInsets.all(50.0),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 80),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              //title
+              Expanded(
+                flex: 2,
+                child: Text(
                     "Sign Up",
                     style: TextStyle(
                         fontSize: 50,
@@ -31,162 +39,239 @@ class _SignUpState extends State<SignUp> {
                         color: Colors.white
                     )
                 ),
-                SizedBox(height: 80),
-                Padding(
+              ),
+              //username
+              Expanded(
+                child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                width: 2,
-                                color: Colors.white
-                            )
-                        )
-                    ),
                     child: TextFormField(
+                      showCursor: false,
                       keyboardType: TextInputType.name,
-                      decoration: InputDecoration(
+                      controller: userController,
+                      decoration: const InputDecoration(
                           hintText: 'Username',
                           hintStyle: TextStyle(
-                              color: Colors.white
+                            color: Colors.white,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.white
+                              )
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.white
+                              )
                           )
                       ),
                       textAlign: TextAlign.center,
-
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
-                SizedBox(height: 50),
-                Padding(
+              ),
+              SizedBox(height: 20),
+              //email
+              Expanded(
+                child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                width: 2,
-                                color: Colors.white
-                            )
-                        )
-                    ),
                     child: TextFormField(
+                      showCursor: false,
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
+                      controller: emailController,
+                      decoration: const InputDecoration(
                           hintText: 'Email',
                           hintStyle: TextStyle(
-                              color: Colors.white
+                            color: Colors.white,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.white
+                              )
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.white
+                              )
                           )
                       ),
                       textAlign: TextAlign.center,
-
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
-                SizedBox(height: 50),
-                Padding(
+              ),
+              SizedBox(height: 20),
+              //password
+              Expanded(
+                child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                width: 2,
-                                color: Colors.white
-                            )
-                        )
-                    ),
                     child: TextFormField(
+                      showCursor: false,
                       keyboardType: TextInputType.visiblePassword,
-                      decoration: InputDecoration(
+                      obscureText: true,
+                      controller: passController,
+                      decoration: const InputDecoration(
                           hintText: 'Password',
                           hintStyle: TextStyle(
-                              color: Colors.white
+                            color: Colors.white,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.white
+                              )
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.white
+                              )
                           )
                       ),
                       textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
-                SizedBox(height: 50),
-                Padding(
+              ),
+              SizedBox(height: 20),
+              //Confirm password
+              Expanded(
+                child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                width: 2,
-                                color: Colors.white
-                            )
-                        )
-                    ),
                     child: TextFormField(
+                      showCursor: false,
                       keyboardType: TextInputType.visiblePassword,
-                      decoration: InputDecoration(
+                      obscureText: true,
+                      controller: conPassController,
+                      decoration: const InputDecoration(
                           hintText: 'Confirm Password',
                           hintStyle: TextStyle(
-                              color: Colors.white
+                            color: Colors.white,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.white
+                              )
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.white
+                              )
                           )
                       ),
                       textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Male',
-                        style: TextStyle(
+              ),
+              SizedBox(height: 20),
+              //gender
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Male',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15
+                      ),
+                    ),
+                    Radio(
+                      value: 1,
+                      groupValue: groupRadio,
+                      activeColor: Colors.blue,
+                      onChanged: (value) => setState(() => groupRadio = value as int),
+                      // onChanged: (value) {
+                      //   setState(() {
+                      //     radioSelected = value;
+                      //     radioVal = 'male';
+                      //   });
+                      // },
+                    ),
+                    SizedBox(width: 30),
+                    Text(
+                      'Female',
+                      style: TextStyle(
                           color: Colors.white,
                           fontSize: 15
-                        ),
                       ),
-                      Radio(
-                        value: 1,
-                        groupValue: _radioSelected,
-                        activeColor: Colors.blue,
-                        onChanged: (value) {
-                          // setState(() {
-                          //   _radioSelected = value;
-                          //   _radioVal = 'male';
-                          // });
-                        },
-                      ),
-                      SizedBox(width: 30),
-                      Text(
-                        'Female',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15
-                        ),
-                      ),
-                      Radio(
-                        value: 2,
-                        groupValue: _radioSelected,
-                        activeColor: Colors.pink,
-                        onChanged: (value) {
-                          // setState(() {
-                          //   _radioSelected = value;
-                          //   _radioVal = 'female';
-                          // });
-                        },
-                      )
-                    ],
-                ),
-                new Spacer(),
-                Padding(
+                    ),
+                    Radio(
+                      value: 2,
+                      groupValue: groupRadio,
+                      activeColor: Colors.pink,
+                      onChanged: (value) => setState(() => groupRadio = value as int),
+                      // onChanged: (value) {
+                      //   setState(() {
+                      //     radioSelected = value;
+                      //     radioVal = 'female';
+                      //   });
+                      // },
+                    )
+                  ],
+              ),
+              new Spacer(),
+              //confirm button
+              Expanded(
+                child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 60,
-                      vertical: 20
                   ),
                   child: Container(
                     width: double.infinity,
                     child: MaterialButton(
                       onPressed: ()
                       {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(builder: (context) => Home())
-                        // );
+                        if(userController.text.isNotEmpty && passController.text.isNotEmpty
+                          && emailController.text.isNotEmpty && conPassController.text.isNotEmpty){
+                          if(conPassController.text == passController.text){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Navigation())
+                            );
+                          }
+                        }
+                        if(userController.text.isEmpty) {
+                          const snackBar = SnackBar(
+                            content: Text(
+                              "Enter valid username",
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        }
+                        if(emailController.text.isEmpty || !emailController.text.contains("@")) {
+                          const snackBar = SnackBar(
+                            content: Text(
+                              "Enter valid email",
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        }
+                        if(passController.text.isEmpty || passController.text.length < 8){
+                          const snackBar = SnackBar(
+                            content: Text(
+                              "Min characters 8",
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        }
+                        if(conPassController.text != passController.text){
+                          const snackBar = SnackBar(
+                              content: Text(
+                                'passwords are not the same',
+                                style: TextStyle(fontSize: 14),
+                              )
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        }
                       },
                       child: Text(
                         'Confirm',
@@ -202,26 +287,33 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Already have an account ?',
-                      style: TextStyle(
-                          color: Colors.white
-                      ),
+              ),
+              //login
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Already have an account ?',
+                    style: TextStyle(
+                        color: Colors.white
                     ),
-                    SizedBox(width: 10),
-                    Text(
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    child: Text(
                       'Login',
                       style: TextStyle(
-                          color: Color.fromARGB(255, 9, 255, 0)
+                        color: Color.fromARGB(255, 9, 255, 0)
                       ),
+                    ),
+                    onPressed: () => setState(() => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Login()))
                     )
-                  ],
-                )
-              ],
-            ),
+                  )
+                ],
+              )
+            ],
           ),
         ),
       ),

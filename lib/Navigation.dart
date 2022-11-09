@@ -1,5 +1,7 @@
 import 'package:final_project_gym/Gym.dart';
 import 'package:final_project_gym/Home.dart';
+import 'package:final_project_gym/Nutrition.dart';
+import 'package:final_project_gym/Profile.dart';
 import 'package:flutter/material.dart';
 
 class Navigation extends StatefulWidget {
@@ -12,8 +14,10 @@ class Navigation extends StatefulWidget {
 class _HomeState extends State<Navigation> {
   int currentIndex = 0;
   List<Widget> screens = [
+    Profile(),
+    Gym(),
     Home(),
-    Gym()
+    Nutrition(),
   ];
 
   @override
@@ -46,33 +50,32 @@ class _HomeState extends State<Navigation> {
       ),
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        currentIndex: 3,
+          currentIndex: currentIndex,
         onTap: (value){
           setState(() {
             currentIndex = value;
           });
         },
-        items:[
+        items: const[
           BottomNavigationBarItem(
-            icon: Icon(Icons.bar_chart_outlined),
-            label: 'progress',
+            icon: Icon(Icons.account_box),
+            label: 'profile',
+            backgroundColor: Colors.black
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.sports_bar),
             label: 'gym',
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'home'
+            label: 'home',
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.food_bank_outlined),
+            backgroundColor: Colors.black,
             label: 'food'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_box),
-            label: 'profile'
           )
         ]
       ),
