@@ -1,8 +1,4 @@
-import 'package:final_project_gym/Gym.dart';
-import 'package:final_project_gym/Home.dart';
-import 'package:final_project_gym/Navigation.dart';
-import 'package:final_project_gym/Login.dart';
-import 'package:final_project_gym/SignUp.dart';
+import 'package:final_project_gym/Pages/Navigation.dart';
 import 'package:flutter/material.dart';
 
 void main() {

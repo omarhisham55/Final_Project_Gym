@@ -32,7 +32,8 @@ dependencies:
 
   sliding_up_panel: ^2.0.0+1
   carousel_slider: ^4.1.1
-
+  group_button: ^5.2.2
+  flutter_multi_select_items: ^0.4.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

@@ -1,5 +1,5 @@
-import 'package:final_project_gym/Login.dart';
-import 'package:final_project_gym/Navigation.dart';
+import 'package:final_project_gym/Pages/Login.dart';
+import 'package:final_project_gym/Pages/Navigation.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
@@ -15,21 +15,21 @@ class _SignUpState extends State<SignUp> {
   var emailController = TextEditingController();
   var conPassController = TextEditingController();
   int groupRadio = 1;
-  var radioVal;
+  var radioVal = 'gender';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 102, 102, 102),
+      backgroundColor: const Color.fromARGB(255, 102, 102, 102),
       body: Padding(
         padding: const EdgeInsets.all(50.0),
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 80),
+          padding: const EdgeInsets.symmetric(vertical: 80),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //title
-              Expanded(
+              const Expanded(
                 flex: 2,
                 child: Text(
                     "Sign Up",
@@ -44,137 +44,129 @@ class _SignUpState extends State<SignUp> {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(
-                    child: TextFormField(
-                      showCursor: false,
-                      keyboardType: TextInputType.name,
-                      controller: userController,
-                      decoration: const InputDecoration(
-                          hintText: 'Username',
-                          hintStyle: TextStyle(
-                            color: Colors.white,
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.white
-                              )
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.white
-                              )
-                          )
-                      ),
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.white),
+                  child: TextFormField(
+                    showCursor: false,
+                    keyboardType: TextInputType.name,
+                    controller: userController,
+                    decoration: const InputDecoration(
+                        hintText: 'Username',
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.white
+                            )
+                        ),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.white
+                            )
+                        )
                     ),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               //email
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(
-                    child: TextFormField(
-                      showCursor: false,
-                      keyboardType: TextInputType.emailAddress,
-                      controller: emailController,
-                      decoration: const InputDecoration(
-                          hintText: 'Email',
-                          hintStyle: TextStyle(
-                            color: Colors.white,
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.white
-                              )
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.white
-                              )
-                          )
-                      ),
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.white),
+                  child: TextFormField(
+                    showCursor: false,
+                    keyboardType: TextInputType.emailAddress,
+                    controller: emailController,
+                    decoration: const InputDecoration(
+                        hintText: 'Email',
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.white
+                            )
+                        ),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.white
+                            )
+                        )
                     ),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               //password
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(
-                    child: TextFormField(
-                      showCursor: false,
-                      keyboardType: TextInputType.visiblePassword,
-                      obscureText: true,
-                      controller: passController,
-                      decoration: const InputDecoration(
-                          hintText: 'Password',
-                          hintStyle: TextStyle(
-                            color: Colors.white,
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.white
-                              )
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.white
-                              )
-                          )
-                      ),
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.white),
+                  child: TextFormField(
+                    showCursor: false,
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
+                    controller: passController,
+                    decoration: const InputDecoration(
+                        hintText: 'Password',
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.white
+                            )
+                        ),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.white
+                            )
+                        )
                     ),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               //Confirm password
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(
-                    child: TextFormField(
-                      showCursor: false,
-                      keyboardType: TextInputType.visiblePassword,
-                      obscureText: true,
-                      controller: conPassController,
-                      decoration: const InputDecoration(
-                          hintText: 'Confirm Password',
-                          hintStyle: TextStyle(
-                            color: Colors.white,
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.white
-                              )
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.white
-                              )
-                          )
-                      ),
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.white),
+                  child: TextFormField(
+                    showCursor: false,
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
+                    controller: conPassController,
+                    decoration: const InputDecoration(
+                        hintText: 'Confirm Password',
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.white
+                            )
+                        ),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.white
+                            )
+                        )
                     ),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               //gender
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Male',
                       style: TextStyle(
                         color: Colors.white,
@@ -193,8 +185,8 @@ class _SignUpState extends State<SignUp> {
                       //   });
                       // },
                     ),
-                    SizedBox(width: 30),
-                    Text(
+                    const SizedBox(width: 30),
+                    const Text(
                       'Female',
                       style: TextStyle(
                           color: Colors.white,
@@ -215,7 +207,7 @@ class _SignUpState extends State<SignUp> {
                     )
                   ],
               ),
-              new Spacer(),
+              const Spacer(),
               //confirm button
               Expanded(
                 child: Padding(
@@ -232,7 +224,7 @@ class _SignUpState extends State<SignUp> {
                           if(conPassController.text == passController.text){
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Navigation())
+                                MaterialPageRoute(builder: (context) => const Navigation())
                             );
                           }
                         }
@@ -273,7 +265,7 @@ class _SignUpState extends State<SignUp> {
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         }
                       },
-                      child: Text(
+                      child: const Text(
                         'Confirm',
                         style: TextStyle(
                             fontSize:20,
@@ -282,7 +274,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                       ),
                     ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 152, 191, 11)
                     ),
                   ),
@@ -292,15 +284,15 @@ class _SignUpState extends State<SignUp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Already have an account ?',
                     style: TextStyle(
                         color: Colors.white
                     ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   TextButton(
-                    child: Text(
+                    child: const Text(
                       'Login',
                       style: TextStyle(
                         color: Color.fromARGB(255, 9, 255, 0)
@@ -308,7 +300,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     onPressed: () => setState(() => Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Login()))
+                          MaterialPageRoute(builder: (context) => const Login()))
                     )
                   )
                 ],

@@ -8,69 +8,193 @@ class Nutrition extends StatefulWidget {
 }
 
 class _NutritionState extends State<Nutrition> {
+  final List<bool> selectedButton = [true, false, false];
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color.fromARGB(255, 102, 102, 102),
-      child: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('images/food.png'),
-            Text(
-              'No schdeule yet',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30
-              ),
-            ),
-            SizedBox(height: 20),
-            Text(
-                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.',
+    return SingleChildScrollView(
+      child: Container(
+        color: const Color.fromARGB(255, 102, 102, 102),
+        child: Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('images/food.png'),
+              const Text(
+                'No schdeule yet',
                 style: TextStyle(
-                    color: Colors.white
-                )
-            ),
-            SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 60,
-                  vertical: 20
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30
+                ),
               ),
-              child: Container(
-                width: double.infinity,
-                child: MaterialButton(
-                  onPressed: ()
-                  {
-                    openDialogAlergy();
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => Home())
-                    // );
-                  },
-                  child: Text(
-                    'Create',
-                    style: TextStyle(
-                        fontSize:20,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white
+              const SizedBox(height: 20),
+              const Text(
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.',
+                  style: TextStyle(
+                      color: Colors.white
+                  )
+              ),
+              const SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 60,
+                    vertical: 20
+                ),
+                child: Container(
+                  width: double.infinity,
+                  child: MaterialButton(
+                    onPressed: ()
+                    {
+                      openDialogAllergy();
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(builder: (context) => Home())
+                      // );
+                    },
+                    child: const Text(
+                      'Create',
+                      style: TextStyle(
+                          fontSize:20,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white
+                      ),
                     ),
                   ),
-                ),
-                decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 152, 191, 11)
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 152, 191, 11)
+                  ),
                 ),
               ),
-            ),
-          ],
+              ToggleButtons(
+                direction: Axis.vertical,
+                onPressed: (int index) {
+                  setState(() {
+                    // The button that is tapped is set to true, and the others to false.
+                    for (int i = 0; i < selectedButton.length; i++) {
+                      selectedButton[i] = i == index;
+                    }
+                  });
+                },
+                isSelected: selectedButton,
+                children: [
+                  Container(
+                      height: 100,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              'Beginner',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        // border: Selected[0] ? borderSelected : border,
+                        // color: Color.fromARGB(255, 72, 72, 72)
+                      )
+                  ),
+                  Container(
+                    height: 100,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'Intermediate',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      // border: Selected[1] ? borderSelected : border,
+                      // color: Color.fromARGB(255, 72, 72, 72)
+                    ),
+                  ),
+                  Container(
+                    height: 100,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'Advanced',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      // border: Selected[2] ? borderSelected : border,
+                      // color: Color.fromARGB(255, 72, 72, 72)
+                    ),
+                  )
+                ],
+                // borderRadius: const BorderRadius.all(Radius.circular(8)),
+                selectedBorderColor: Colors.green,
+                borderColor: Colors.white,
+                // selectedColor: Colors.white,
+                // fillColor: Colors.red[200],
+                // color: Colors.red[400],
+                // constraints: const BoxConstraints(
+                //   minHeight: 40.0,
+                //   minWidth: 80.0,
+                // ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Future openDialogAlergy() => showDialog(
+  Future openDialogAllergy() => showDialog(
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: Color.fromARGB(255, 66, 66, 66),

@@ -1,5 +1,4 @@
-import 'package:final_project_gym/NewsFeed.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:final_project_gym/Pages/NewsFeed.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:carousel_slider/carousel_slider.dart';

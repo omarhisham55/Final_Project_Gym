@@ -1,6 +1,7 @@
-import 'package:final_project_gym/Home.dart';
+import 'package:final_project_gym/Pages/Home.dart';
 import 'package:final_project_gym/Navigation.dart';
-import 'package:final_project_gym/SignUp.dart';
+import 'package:final_project_gym/Pages/Navigation.dart';
+import 'package:final_project_gym/Pages/SignUp.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {

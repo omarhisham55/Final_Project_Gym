@@ -79,7 +79,7 @@ class Newsfeed extends StatelessWidget {
                 decoration: BoxDecoration(
                     border: Border.all(width: 1)
                 ),
-                child: Image.asset('images/Muscular System 1.png', height: 200,)),
+                child: Image.asset('images/bg.png', height: 200,)),
           ),
           Row(
             children: [
@@ -131,7 +131,7 @@ class Newsfeed extends StatelessWidget {
                     physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) => NewsSection(),
                     separatorBuilder: (context, index) => SizedBox(height: 10),
-                    itemCount: 15)
+                    itemCount: 15),
               ],
             )
           ]
