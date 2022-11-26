@@ -144,7 +144,7 @@ class Newsfeed extends StatelessWidget {
           height: 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'News Feed',
                 style: TextStyle(

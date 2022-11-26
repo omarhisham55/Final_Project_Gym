@@ -165,7 +165,6 @@ List<Widget> goal = [
   ),
 ];
 
-
 // Done\
 openDialogExperience(context) => showDialog(
   context: context,
@@ -1045,10 +1044,9 @@ openDialogBodyMeasurements(context) => showDialog(
     })
 );
 
-//In_body
+// In_body
 openDialogInbody(context) => showDialog(
     context: context,
-    barrierDismissible: false,
     builder: (context) => StatefulBuilder(builder: (context, StateSetter setState){
       return Dialog(
         backgroundColor: colorBackground,
@@ -1078,63 +1076,221 @@ openDialogInbody(context) => showDialog(
                 ),
               ],
             ),
-            const Text(
-              'Inbody',
-              style: TextStyle(
-                  color: Colors.white
+            const Padding(
+              padding: EdgeInsets.only(
+                  left: 15.0,
+                  top: 15.0
               ),
-              textAlign: TextAlign.start,
+              child: Text(
+                'Inbody',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20
+                ),
+                textAlign: TextAlign.start,
+              ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    color: Colors.white,
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Row(
-                        children: [
-                          Text(
-                            '${bodyFatPercent.round()}',
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold
-                            ),
-                          ),
-                          const Spacer(),
-                          const Icon(Icons.percent_sharp)
-                        ],
-                      ),
-                    ),
-                    ),
-                  Slider(
-                    value: bodyFatPercent,
-                    max: 30,
-                    min: 0,
-                    activeColor: colorGreen,
-                    inactiveColor: Colors.white,
-                    onChanged: (value){
-                      setState(() {
-                        bodyFatPercent = value;
-                      });
-                    },
+            //input column
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15.0,
+                    top: 15.0
                   ),
-
-                ],
-              ),
-              ),
+                  child: Text(
+                    '${titles[2]}',
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        '${bodyFatPercent.round()}',
+                        style: const TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                        ),
+                      ),
+                      const Spacer(),
+                      const Icon(Icons.percent)
+                    ],
+                  ),
+                ),
+                Slider(
+                  value: bodyFatPercent,
+                  max: 30,
+                  min: 0,
+                  activeColor: colorGreen,
+                  inactiveColor: Colors.white,
+                  onChanged: (value){
+                    setState(() {
+                      bodyFatPercent = value;
+                    });
+                  },
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 15.0,
+                      top: 15.0
+                  ),
+                  child: Text(
+                    '${titles[2]}',
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        '${bodyFatPercent.round()}',
+                        style: const TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                        ),
+                      ),
+                      const Spacer(),
+                      const Icon(Icons.percent)
+                    ],
+                  ),
+                ),
+                Slider(
+                  value: bodyFatPercent,
+                  max: 30,
+                  min: 0,
+                  activeColor: colorGreen,
+                  inactiveColor: Colors.white,
+                  onChanged: (value){
+                    setState(() {
+                      bodyFatPercent = value;
+                    });
+                  },
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 15.0,
+                      top: 15.0
+                  ),
+                  child: Text(
+                    '${titles[2]}',
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        '${bodyFatPercent.round()}',
+                        style: const TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                        ),
+                      ),
+                      const Spacer(),
+                      const Icon(Icons.percent)
+                    ],
+                  ),
+                ),
+                Slider(
+                  value: bodyFatPercent,
+                  max: 30,
+                  min: 0,
+                  activeColor: colorGreen,
+                  inactiveColor: Colors.white,
+                  onChanged: (value){
+                    setState(() {
+                      bodyFatPercent = value;
+                    });
+                  },
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 15.0,
+                      top: 15.0
+                  ),
+                  child: Text(
+                    '${titles[2]}',
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        '${bodyFatPercent.round()}',
+                        style: const TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                        ),
+                      ),
+                      const Spacer(),
+                      const Icon(Icons.percent)
+                    ],
+                  ),
+                ),
+                Slider(
+                  value: bodyFatPercent,
+                  max: 30,
+                  min: 0,
+                  activeColor: colorGreen,
+                  inactiveColor: Colors.white,
+                  onChanged: (value){
+                    setState(() {
+                      bodyFatPercent = value;
+                    });
+                  },
+                ),
+              ],
+            ),
+            //Save Button
             Padding(
               padding: const EdgeInsets.symmetric(
-                  horizontal: 60,
                   vertical: 20
               ),
               child: Container(
+                width: 220,
                 child: MaterialButton(
                   onPressed: () async {
                     setState(() {
-                      openDialogExperience(context);
+
                     });
                     // Navigator.push(
                     //     context,
@@ -1150,14 +1306,23 @@ openDialogInbody(context) => showDialog(
                     ),
                   ),
                 ),
-                decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 152, 191, 11)
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 152, 191, 11),
+                  borderRadius: BorderRadius.circular(30)
                 ),
               ),
             )
           ],
         )
       );
-    })
+    }
+  )
 );
 double bodyFatPercent = 0;
+List<String> titles = [
+  'Body fat percent',
+  'Muscle mass',
+  'Fat mass',
+  'BMI'
+];
+

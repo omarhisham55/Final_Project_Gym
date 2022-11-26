@@ -2,6 +2,7 @@ import 'package:final_project_gym/Pages/Gym.dart';
 import 'package:final_project_gym/Pages/Home.dart';
 import 'package:final_project_gym/Pages/Nutrition.dart';
 import 'package:final_project_gym/Pages/Profile.dart';
+import 'package:final_project_gym/Pages/Recomended_Program_Info.dart';
 import 'package:flutter/material.dart';
 
 class Navigation extends StatefulWidget {
@@ -18,6 +19,9 @@ class _HomeState extends State<Navigation> {
     Gym(),
     Home(),
     Nutrition(),
+  ];
+  List<Widget> plusScreens = [
+    RecommendedProgramInfo()
   ];
 
   @override
